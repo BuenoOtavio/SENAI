@@ -1,0 +1,10 @@
+md pasta1
+md pasta2
+md pasta3
+md pasta4
+md pasta5
+md .\pasta1\1
+md .\pasta2\2
+md .\pasta3\3
+md .\pasta4\4
+md .\pasta5\5

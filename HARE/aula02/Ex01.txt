@@ -1,0 +1,6 @@
+1: 1600 mhz
+
+2: 8e+9 bytes
+
+3: Litle-Endian
+

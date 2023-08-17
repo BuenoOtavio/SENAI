@@ -1,0 +1,18 @@
+body {
+    background-image: url(../Img/Universe.jpg);
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    font-size: 30px;
+    color: white
+}
+
+.txt1{
+    color: hotpink;
+}
+
+#txt2{  
+    color: antiquewhite;
+}
