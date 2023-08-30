@@ -1,0 +1,37 @@
+.link{
+    display: flex;
+    justify-content: right;
+    margin-right: 2vw;
+}
+
+h2{
+    color: black;
+}
+
+a{
+    text-decoration: underline black;
+}
+
+.linha{
+    
+    border-top: 2px solid black;
+    justify-content: space-between;
+}
+.container{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 100vh;
+}
+
+table{
+    width: 50vw;
+    height: 50vh;
+    border-collapse: collapse; ;
+}
+
+body{
+    overflow-y: hidden;
+}
+

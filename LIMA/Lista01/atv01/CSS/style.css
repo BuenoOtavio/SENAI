@@ -1,0 +1,45 @@
+body{
+    overflow-y: hidden;
+}
+
+.link{
+    display: flex;
+    justify-content: right;
+    margin-top: 0;
+    margin-right: 2vw;
+}
+
+h2{
+    color: black;
+}
+
+a{
+    text-decoration: underline black;
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 33.33vh;
+}
+
+.container2{
+    height: 33.33vh;
+    width: 55vh;
+}
+
+.lista{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container3{
+    height: 33.33vh;
+    width: 55vh;
+}
+
+.lista2{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
