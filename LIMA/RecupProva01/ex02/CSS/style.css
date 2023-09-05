@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    overflow-y: hidden;
+}
+
+header{
+    display: flex;
+    background-color:  #FFC107;
+    height: 8vh;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.head{
+    display: flex;
+    margin-left: 4vh;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    width: 25vw;
+}
+
+.head2{
+    display: flex;
+    margin-right: 4vh;
+    flex-direction: row;
+    justify-content: space-between;
+    color: orangered;
+    width: 25vw;
+}
+
+.header2{
+        display: flex;
+        background-color:  black;
+        height: 8vh;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+.align{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 20vw;
+    justify-content: space-evenly;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+
+h2{
+    color: white;
+}
+
+.yellow{
+    color: #FFC107;
+}
+
+.menu{
+    height: 4vh;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../IMG/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: calc();
+    height: 85vh;
+    width: 100vw;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    width: 60vw;
+    border: none;
+    background-color: rgba(16, 16, 16, 0.6);
+}
+
+
+.label{
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    font-weight: bold;
+    color: white;
+}
+
+.pesquisa{
+     display: flex;
+     width: 60vw;
+     align-items: center;
+     justify-content: space-evenly;
+}
+
+.pesquisa2{
+    display: flex;
+    align-items: center;
+}
+
+.buscar{
+    height: 5vh;
+    width: 25vw;
+}
+
+
+.lupa{
+    width: 3vw;
+}
