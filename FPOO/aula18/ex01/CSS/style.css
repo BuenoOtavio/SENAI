@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    background-color:rgb(226, 197, 252) ;
+    overflow-x: hidden;
+}
+
+
+main{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main div{
+  display: flex;
+  width: 20vw;
+  height: 40vh;
+  background: linear-gradient(0deg, rgba(104,34,195,1) 0%, rgb(155, 18, 205) 100%);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.468);
+  border-radius: 75px;
+  justify-content: space-around;
+  padding: 5px;
+
+}
+
+.dados{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.dados h1,
+.dados h3{
+    justify-self: center;
+    color: rgb(226, 197, 252);
+}
+
+#formSal{
+    height: 10vh;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(104,34,195,1) 0%, rgb(155, 18, 205) 100%);;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#pessoa{
+   height: 4vh;
+   width: 15vw;
+   border-radius: 20px;
+   border: 4px solid rgb(70, 22, 132);
+   color: darkgrey;
+}
+
+#sal{
+   height: 4vh;
+   width: 15vw;
+   border-radius: 20px;
+   border: 4px solid rgb(70, 22, 132);
+   color: darkgrey;
+}
+
+#butao{
+    height: 4vh;
+    width: 7vw;
+    border-radius: 20px;
+    border: 4px solid rgb(70, 22, 132);
+    background: rgb(70, 22, 132);
+    color: white;
+    font-weight: bold;
+}
