@@ -1,0 +1,19 @@
+ip: 10.87.202.156
+
+End.Físico: 20-47-47-FD-CF-AE
+
+Gateway: 10.87.202.129
+
+Ip Internet: 186.238.4.130
+
+Nome máquina: DESKTOP-79N0DMC
+
+TTl -> GW : 10.190.254.2
+
+TTL : 128
+
+0.0.0.0 : endereço não roteável que descreve um destino inválido ou desconhecido
+
+255.255.255.255 : endereço IP reservado pela agência de gerenciamento de endereços IP e não atribuído como um IP público ou privado
+
+127.0.0.1 : endereço de rede reservado para funções de loopback
