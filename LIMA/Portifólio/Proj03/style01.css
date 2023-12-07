@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.calculator{
+    height: 80vh;
+    width: 40vw;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.35);
+}
+
+.input{
+    width: 30vw;
+    height: 10vh;
+    background-color: white;
+    border: 2px solid blueviolet;
+    text-align: right;
+    font-size: 6vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    padding-right: 2vw;
+    border-radius: 15px;
+}
+
+.buttons{
+    width: 30vw;
+    height: 46vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.operators{
+    width: 30vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.operacao{
+    width: 6vw;
+    height: 6vh;
+    background-color: aliceblue;
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.operacao:hover{
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.partBaixo{
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftPanel{
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.numbers{
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.valores{
+    width: 5vw;
+    height: 5vh;
+    background-color: aliceblue;
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.valores:hover{
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.equal{
+    width: 8vw;
+    height: 30vh;
+    background-color:blueviolet;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+.equal:hover{
+    box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}

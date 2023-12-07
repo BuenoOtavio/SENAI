@@ -1,0 +1,38 @@
+body{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background-color:saddlebrown;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:burlywood;
+}
+
+.butao{
+    background-color:saddlebrown;
+    color: burlywood;
+    border: 2px solid burlywood;
+    font-weight: bold;
+    font-size: 20px;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+}
+
+.num{
+    border: 3px solid burlywood;
+    background-color: saddlebrown;
+    color: burlywood;
+    border-radius: 10px;
+    height: 5vh;
+    font-size: 20px;
+}
+
+a{
+    color: burlywood;
+    font-weight: bold;
+    text-decoration: none;
+}
