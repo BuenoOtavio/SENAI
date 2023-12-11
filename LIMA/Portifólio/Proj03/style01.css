@@ -135,3 +135,65 @@ body{
 .equal:hover{
     box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
+
+@media only screen and (max-width: 466px){
+    body{
+        width: 466;
+        height: 566;
+    }
+
+    .calculator{
+        width: 60%;
+        height: 80%;
+    }
+
+    .input{
+        width: 80%;
+        height: 8%;
+    }
+
+    .buttons{
+        height: 70%;
+        width: 80%;
+    }
+
+    .operators{
+        height: 16%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .operacao{
+        width: 45px;
+        height: 40px;
+    }
+
+    .partBaixo{
+        height: 60%;
+        width: 100%;
+    }
+
+    .leftPanel{
+        height: 100%;
+        width: 63%;
+        display: flex;
+        align-items: center;
+    }
+
+    .numbers{
+        width: 100%;
+        height: 20%;
+    }
+
+    .valores{
+        width: 40px;
+        height: 35px;
+    }
+
+    .equal{
+        height: 100%;
+        width: 33%;
+    }
+}
