@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 35vh;
+    width: 40vw;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+}
+
+.boxMaior{
+    height: 10vh;
+    width:40vw;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxMenor{
+    height: 20vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputCep{
+    height: 4vh;
+    width: 25vw;
+    border-radius: 10px;
+}
+
+.buscaCep{
+    height: 4vh;
+    width: 6vw;
+    border-radius: 10px;
+}
