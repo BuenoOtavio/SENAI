@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="update.css">
+    <title>Lojinha</title>
+</head>
+<body>
+    <header>
+        <h1>Atualiza Cliente</h1>
+    </header>
+    <nav>
+        <a href="index.html">Listar todos</a>
+        <a href="form.html">Cadastrar</a>
+    </nav>
+    <main>
+        <form id="update">
+            <input type="text" name="id" id="id" placeholder="Id" disabled>
+            <input type="text" name="nome" id="nome" placeholder="Nome do Filme" required>
+            <input type="text" name="direcao" id="direcao" placeholder="Direção" required>
+            <input type="text" name="estudio" id="estudio" placeholder="Estudio" required>
+            <input type="number" name="faixa" id="faixa" placeholder="Faixa Etária" required>
+            <input type="number" name="ano" id="ano" placeholder="Ano de Lançamento" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <footer>
+        <h2>By Tavinho</h2>
+    </footer>
+</body>
+<script>
+    //Obter os dados da URL (via query string)
+    const url = window.location.search
+    const params = new URLSearchParams(url)
+    document.querySelector("#id").value = params.get('id');
+    document.querySelector("#nome").value = params.get('nome');
+    document.querySelector("#direcao").value = params.get('direcao');
+    document.querySelector("#estudio").value = params.get('estudio');
+    document.querySelector("#faixa").value = params.get('faixa'); 
+    document.querySelector("#ano").value = params.get('ano');
+    
+    const update = document.getElementById('update');
+    update.addEventListener('submit', function(e){
+        e.preventDefault();
+        const id = document.querySelector("#id").value;
+        const nome = document.querySelector("#nome").value;
+        const direcao = document.querySelector("#direcao").value;
+        const estudio = document.querySelector("#estudio").value;
+        const faixa = document.querySelector("#faixa").value;
+        const ano = document.querySelector("#ano").value;
+        fetch('http://localhost:3000/filmes/'+id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nome, direcao, estudio, faixa, ano})
+        })
+        .then(res => res.json())
+        .then(res => {
+            if(res.erro){
+                window.location.href = 'erro.html?erro='+res.erro+'&err='+res.err;
+            }else{
+                window.location.href = 'index.html';
+            }
+        });
+    });
+
+</script>
+</html>

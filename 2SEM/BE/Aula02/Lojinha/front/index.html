@@ -22,7 +22,8 @@
                     <th>ID</th>
                     <th>CPF</th>
                     <th>Nome Completo</th>
-                    <th>Nascimento</th>
+                    <th>Idade</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody id="dados">
@@ -36,20 +37,47 @@
 </body>
 
 <script>
-    const dados = document.getElementById("dados");
+    const dados = document.getElementById('dados');
     fetch('http://localhost:3000/clientes')
         .then(res => res.json())
         .then(res => {
-            res.forEach(pessoa => {
-                dados.innerHTML +=`
-                <tr>
-                    <td>${pessoa.id}</td>
-                    <td>${pessoa.cpf}</td>
-                    <td>${pessoa.nome} ${pessoa.sobrenome}</td>
-                    <td>${pessoa.nascimento}</td>
-                </tr>`
-            })
-        })
+            res.forEach(cli => {
+                dados.innerHTML += `
+                    <tr>
+                        <td>${cli.id}</td>
+                        <td>${cli.cpf}</td>
+                        <td>${cli.nome} ${cli.sobrenome}</td>
+                        <td>${calcIdade(cli.nascimento)}</td>
+                        <td>
+                            <button onclick='del(${cli.id})'>[ - ]</button>
+                            <button onclick='window.location.href="./update.html?id=${cli.id}&cpf=${cli.cpf}&nome=${cli.nome}&sobrenome=${cli.sobrenome}&nascimento=${cli.nascimento}"'>
+                                [ * ]
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        });
+
+    function calcIdade(nascimento) {
+        const hoje = new Date();
+        const nasc = new Date(nascimento);
+        let idade = hoje.getFullYear() - nasc.getFullYear();
+        const mes = hoje.getMonth() - nasc.getMonth();
+        if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) {
+            idade--;
+        }
+        return idade;
+    }
+
+    function del(id) {
+        fetch(`http://localhost:3000/clientes/${id}`,{method: 'DELETE'})
+            .then(res => res.json())
+            .then(res => {
+                window.location.reload();
+            });
+    }
 </script>
+
 
 </html>

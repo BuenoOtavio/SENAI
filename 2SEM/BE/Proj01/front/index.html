@@ -23,6 +23,7 @@
                     <th>ESTUDIO</th>
                     <th>FAIXA</th>
                     <th>ANO</th>
+                    <th>OPÇÕES</th>
                 </tr>
             </thead>
             <tbody id="dados">
@@ -36,22 +37,38 @@
 </body>
 
 <script>
-    const dados = document.getElementById("dados");
+
+    const dados = document.getElementById('dados');
     fetch('http://localhost:3000/filmes')
         .then(res => res.json())
         .then(res => {
             res.forEach(filme => {
-                dados.innerHTML +=`
-                <tr>
-                    <td>${filme.id}</td>
-                    <td>${filme.nome}</td>
-                    <td>${filme.direcao}</td>
-                    <td>${filme.estudio}</td>
-                    <td>${filme.faixa}</td>
-                    <td>${filme.ano}</td>
-                </tr>`
-            })
-        })
+                dados.innerHTML += `
+                    <tr>
+                        <td>${filme.id}</td>
+                        <td>${filme.nome}</td>
+                        <td>${filme.direcao}</td>
+                        <td>${filme.estudio}</td>
+                        <td>${filme.faixa}</td>
+                        <td>${filme.ano}</td>
+                        <td>
+                            <button onclick='del(${filme.id})'>[ - ]</button>
+                            <button onclick='window.location.href="update.html?id=${filme.id}&nome=${filme.nome}}&direcao=${filme.direcao}&estudio=${filme.estudio}&faixa=${filme.faixa}&ano=${filme.ano}"'>
+                                [ * ]
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        });
+
+        function del(id) {
+        fetch(`http://localhost:3000/filmes/${id}`,{method: 'DELETE'})
+            .then(res => res.json())
+            .then(res => {
+                window.location.reload();
+            });
+        }
 </script>
 
 </html>
