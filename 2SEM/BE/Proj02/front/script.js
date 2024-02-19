@@ -28,8 +28,8 @@ function preencherTabela() {
                     <td>${cli.descricao}</td>
                     <td>R$ ${cli.valor}</td>
                     <td>
-                        <button onclick="del(${cli.id})"> x </button>
-                        <button onclick="edit(this)"> # </button>
+                        <button onclick="del(${cli.id})"> - </button>
+                        <button onclick="edit(this)"> * </button>
                     </td>
                 </tr>
             `;

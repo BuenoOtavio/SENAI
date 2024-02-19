@@ -13,7 +13,7 @@
     <header>
         <h1>Interface de Gestão de Itens</h1>
         <nav>
-            <button onclick="cadastro.classList.remove('oculto')">+</button>
+            <button onclick="cadastro.classList.remove('oculto')">Novo</button>
         </nav>
     </header>
     <main>
@@ -36,15 +36,13 @@
     </footer>
     <div class="modal oculto" id="cadastro">
         <div class="janela">
-            <div class="topForm">
-                <h2>Cadastrar novo item: </h2>
-                <input type="reset" value="X" class="cancel" onclick="cadastro.classList.add('oculto')">
-            </div>
+            <h2>Cadastrar novo item: </h2>
             <form id="criar">
                 <input type="text" name="id" placeholder="id" required>
                 <input type="text" name="nome" placeholder="nome" required>
                 <input type="text" name="descricao" placeholder="Descricao">
-                <input type="submit" value="Enviar" class="submit">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Cancelar" onclick="cadastro.classList.add('oculto')">
             </form>
         </div>
     </div>
