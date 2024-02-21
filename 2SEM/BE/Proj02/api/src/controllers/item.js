@@ -5,12 +5,11 @@ const cors = require("cors");
 
 
 const create = (req, res) => {
-    let id = req.params.id;
     let nome = req.body.nome;
     let descricao = req.body.descricao;
-    let valor = req.body.valor;
-    let query = `INSERT INTO item(id, nome, descricao, valor) VALUE`;
-    query += `('${id}', '${nome}', '${descricao}', '${valor}');`;
+    let valor = Number (req.body.valor);
+    let query = `INSERT INTO item(nome, descricao, valor) VALUES`;
+    query += `('${nome}', '${descricao}', '${valor}');`;
     con.query(query,(err, result)=>{
         if(err)
             res.status(400).json(err + "- Id já existente!").end();
@@ -24,7 +23,7 @@ const create = (req, res) => {
 
 
 const read = (req, res) => {
-    con.query("SELECT * FROM item ORDER BY id DESC",(err, result)=>{
+    con.query("SELECT * FROM item ORDER BY id",(err, result)=>{
         if(err)
             res.json(err);
         else

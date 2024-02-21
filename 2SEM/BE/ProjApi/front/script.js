@@ -1,9 +1,9 @@
 //Variáveis e constantes(objetos) globais
-const uri = "http://localhost:3000/clientes";
-const clientes = [];
 const msgs = document.getElementById('msgs');
 const criar = document.getElementById('criar');
 const dados = document.getElementById('dados');
+const uri = "http://localhost:3000/clientes";
+const clientes = [];
 const cadastro = document.getElementById('cadastro');
 
 //Obter dados do back-end
@@ -11,9 +11,10 @@ function loadClientes() {
     fetch(uri)
         .then(res => res.json())
         .then(res => {
-            res.forEach(cli => {
-                clientes.push(cli);
-            });
+            // res.forEach(cli => {
+            //     clientes.push(cli);
+            // });
+            clientes.push(...res);
             preencherTabela();
         });
 }

@@ -1,7 +1,5 @@
 //Dependências - Frameworks
-const express = require("express");
 const con = require("../connect/connect").con;
-const cors = require("cors");
 
 //CRUD - create
 const create = (req, res) => {
@@ -11,10 +9,10 @@ const create = (req, res) => {
     let nascimento = req.body.nascimento;
     let query = `INSERT INTO clientes(cpf, nome, sobrenome, nascimento) VALUE`;
     query += `('${cpf}', '${nome}', '${sobrenome}', '${nascimento}');`;
-    con.query(query,(err, result)=>{
-        if(err)
+    con.query(query, (err, result) => {
+        if (err)
             res.status(400).json(err).end();
-        else{
+        else {
             const novo = req.body;
             novo.id = result.insertId;
             res.status(201).json(novo).end();
@@ -24,8 +22,8 @@ const create = (req, res) => {
 
 //CRUD - Read
 const read = (req, res) => {
-    con.query("SELECT * FROM Clientes ORDER BY id DESC",(err, result)=>{
-        if(err)
+    con.query("SELECT * FROM Clientes ORDER BY id DESC", (err, result) => {
+        if (err)
             res.json(err);
         else
             res.json(result);
@@ -40,12 +38,12 @@ const update = (req, res) => {
     let sobrenome = req.body.sobrenome;
     let nascimento = req.body.nascimento;
     let query = `UPDATE clientes SET cpf = '${cpf}', nome = '${nome}', sobrenome = '${sobrenome}', nascimento = '${nascimento}' WHERE id = ${id}`;
-    con.query(query,(err, result)=>{
-        if(err)
-            res.status(400).json(err).end();
-        else{
-            if(result.affectedRows > 0)
-                res.status(202).json(result).end();
+    con.query(query, (err, result) => {
+        if (err)
+            res.status(400).json(err).end;
+        else {
+            if (result.affectedRows > 0)
+                res.status(202).json(req.body).end();
             else
                 res.status(404).json("Registro não encontrado").end();
         }
@@ -55,12 +53,12 @@ const update = (req, res) => {
 //CRUD - Delete
 const del = (req, res) => {
     let id = req.params.id;
-    con.query(`DELETE FROM Clientes WHERE id = ${id}`,(err, result)=>{
-        if(err)
-            res.json(err);
-        else{
-            if(result.affectedRows > 0)
-                res.status(204).json("Registro " + req.params.id + "").end();
+    con.query(`DELETE FROM Clientes WHERE id = ${id}`, (err, result) => {
+        if (err)
+            res.status(400).json(err).end();
+        else {
+            if (result.affectedRows > 0)
+                res.status(204).json(result).end();
             else
                 res.status(404).json("Registro não encontrado").end();
         }

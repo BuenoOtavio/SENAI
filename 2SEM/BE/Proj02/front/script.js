@@ -11,8 +11,8 @@ function loadItens() {
     fetch(uri)
         .then(res => res.json())
         .then(res => {
-            res.forEach(cli => {
-                itens.push(cli);
+            res.forEach(item => {
+                itens.push(item);
             });
             preencherTabela();
         });
@@ -20,15 +20,15 @@ function loadItens() {
 
 
 function preencherTabela() {
-    itens.forEach(cli => {
+    itens.forEach(item => {
         dados.innerHTML += `
                 <tr>
-                    <td>${cli.id}</td>
-                    <td>${cli.nome}</td>
-                    <td>${cli.descricao}</td>
-                    <td>R$ ${cli.valor}</td>
+                    <td>${item.id}</td>
+                    <td>${item.nome}</td>
+                    <td>${item.descricao}</td>
+                    <td>R$ ${item.valor}</td>
                     <td>
-                        <button onclick="del(${cli.id})"> - </button>
+                        <button onclick="del(${item.id})"> - </button>
                         <button onclick="edit(this)"> * </button>
                     </td>
                 </tr>
@@ -40,7 +40,6 @@ function preencherTabela() {
 criar.addEventListener('submit', e => {
     e.preventDefault();
     const data = {
-        id: criar.id.value,
         nome: criar.nome.value,
         descricao: criar.descricao.value,
         valor: criar.valor.value
@@ -75,7 +74,7 @@ function update(btn) {
     let data = {
         nome: celulas[1].innerHTML,
         dascricao: celulas[2].innerHTML,
-        valor: celulas[3].innerHTML,
+        valor: celulas[3].innerHTML
     };
     fetch(uri + '/' + id, {
         method: 'PUT',
@@ -118,7 +117,7 @@ function confirmar(id) {
 function edit(btn) {
     let linha = btn.parentNode.parentNode;
     let celulas = linha.cells;
-    for (let i = 1; i < celulas.length - 2; i++) {
+    for (let i = 1; i < celulas.length - 1; i++) {
         celulas[i].setAttribute('contenteditable', 'true');
     }
     btn.innerHTML = '✔';
