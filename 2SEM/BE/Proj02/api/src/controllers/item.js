@@ -36,11 +36,13 @@ const update = (req, res) => {
     let id = req.params.id;
     let nome = req.body.nome;
     let descricao = req.body.descricao;
-    let valor = Number (req.body.valor);
+    let valor = Number(req.body.valor);
     let query = `UPDATE item SET nome = '${nome}', descricao = '${descricao}', valor = ${valor} WHERE id = ${id}`;
     con.query(query,(err, result)=>{
-        if(err)
+        if(err){
             res.status(400).json(err).end();
+             console.log(err);
+            }
         else{
             if(result.affectedRows > 0)
                 res.status(202).json(result).end();

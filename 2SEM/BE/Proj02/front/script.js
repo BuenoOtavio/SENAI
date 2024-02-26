@@ -3,8 +3,10 @@ const uri = "http://localhost:3000/item";
 const itens = [];
 const msgs = document.getElementById('msgs');
 const criar = document.getElementById('criar');
+const patri = document.getElementById('textPatri');
 const dados = document.getElementById('dados');
 const cadastro = document.getElementById('cadastro');
+const sistema = document.getElementById('sisMsgs');
 
 
 function loadItens() {
@@ -15,6 +17,7 @@ function loadItens() {
                 itens.push(item);
             });
             preencherTabela();
+            patrimonio()
         });
 }
 
@@ -26,16 +29,29 @@ function preencherTabela() {
                     <td>${item.id}</td>
                     <td>${item.nome}</td>
                     <td>${item.descricao}</td>
-                    <td>R$ ${item.valor}</td>
+                    <td>${item.valor.toFixed(2)}</td>
                     <td>
                         <button onclick="del(${item.id})"> - </button>
                         <button onclick="edit(this)"> * </button>
                     </td>
                 </tr>
             `;
+            sistema.innerHTML = `
+               Tabela Preenchida com sucesso!
+            `
     });
 }
 
+function patrimonio() {
+    patri.innerHTML = ``;
+    let patrimonio = 0;
+    itens.forEach(item => {
+        patrimonio += Number(item.valor); 
+    }); 
+    patri.innerHTML = ` 
+    Patrimonio: R$ ${patrimonio.toFixed(2)} 
+  `; 
+}
 
 criar.addEventListener('submit', e => {
     e.preventDefault();
@@ -59,6 +75,9 @@ criar.addEventListener('submit', e => {
                 preencherTabela();
                 cadastro.classList.add('oculto');
                 criar.reset();
+                patri.innerHTML = "";
+                patrimonio();
+                sistema.innerHTML = `Sucesso ao cadastrar!`;
             } else {
                 cadastro.classList.add('oculto');
                 mensagens(res.sqlMessage, 'Erro ao cadastrar item!');
@@ -73,7 +92,7 @@ function update(btn) {
     let id = celulas[0].innerHTML;
     let data = {
         nome: celulas[1].innerHTML,
-        dascricao: celulas[2].innerHTML,
+        descricao: celulas[2].innerHTML,
         valor: celulas[3].innerHTML
     };
     fetch(uri + '/' + id, {
@@ -91,8 +110,10 @@ function update(btn) {
                 celulas[3].removeAttribute('contenteditable');
                 btn.innerHTML = '*';
                 btn.setAttribute('onclick', 'edit(this)');
+                sistema.innerHTML = `Sucesso ao atualizar!`;
             } else {
                 mensagens(res.sqlMessage, 'Erro ao atualizar Item!');
+                sistema.innerHTML = `Erro ao atualizar :(!`;
             }
         });
 }
@@ -103,14 +124,25 @@ function del(id) {
 }
 
 
-function confirmar(id) {
-    fetch(uri + '/' + id, {
-        method: 'DELETE'
-    })
-        .then(res => res.json())
-        .then(res => {
-            window.location.reload();
+async function confirmar(id) {
+    
+    try{
+        let response = await fetch(`${uri}/${id}`, {
+            method:'DELETE'
         });
+    
+        if(response.status === 204) {
+            window.location.reload();
+
+        } else {
+           let errorData = await response.json();
+           console.error('Errinho', errorData.error);
+        }
+    }
+
+    catch(error){
+        console.error('Man deu mto erro aq :(', error);
+    };
 }
 
 
