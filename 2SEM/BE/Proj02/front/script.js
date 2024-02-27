@@ -29,10 +29,10 @@ function preencherTabela() {
                     <td>${item.id}</td>
                     <td>${item.nome}</td>
                     <td>${item.descricao}</td>
-                    <td>${item.valor.toFixed(2)}</td>
-                    <td>
+                    <td> ${item.valor}</td>
+                    <td class="botao">
                         <button onclick="del(${item.id})"> - </button>
-                        <button onclick="edit(this)"> * </button>
+                        <button onclick="edit(this)"> ✐ </button>
                     </td>
                 </tr>
             `;
@@ -108,7 +108,7 @@ function update(btn) {
                 celulas[1].removeAttribute('contenteditable');
                 celulas[2].removeAttribute('contenteditable');
                 celulas[3].removeAttribute('contenteditable');
-                btn.innerHTML = '*';
+                btn.innerHTML = '✐';
                 btn.setAttribute('onclick', 'edit(this)');
                 sistema.innerHTML = `Sucesso ao atualizar!`;
             } else {
