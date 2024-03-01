@@ -8,18 +8,20 @@ import loginForm from './components/loginForm';
 const stack = createNativeStackNavigator();
 
 export default function App() {
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen  
-        name="Login"
-        component={loginForm}
-        option={{tittle: 'Bem Vindo'}}
-       /> 
-      <Stack.Screen 
-        name="telaImc"
-        component={ScreenImc}
-        options={{tittle: 'Calcula seu IMC'}}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={loginForm}
+          option={{ tittle: 'Bem Vindo' }}
+        />
+        <Stack.Screen
+          name="telaImc"
+          component={ScreenImc}
+          options={{ tittle: 'Calcula seu IMC' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }

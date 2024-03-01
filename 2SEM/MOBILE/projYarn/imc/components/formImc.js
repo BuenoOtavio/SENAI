@@ -1,43 +1,85 @@
-import {
-    StyleSheet,
-    text,
-    View,
-    TextInput,
-    Dimensions,
-    TouchableOpacity
-} from 'react-native';
-import react from 'react';
-import MaskInput from 'react-native-mask-input';
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
+import React from "react";
+import MaskInput
+    from "react-native-mask-input";
 
-const { width, height } = Dimensions.get('screen');
+export default function formImc() {
+    const [peso, setPeso] = React.useState('');
+    const [altura, setAltura] = React.useState('');
+    const [imc, setImc] = React.useState('');
 
-const user = {
-    usename: "user",
-    pass: "123456"
-}
-
-export default function loginForm({ navigation }) {
-    const { username, setUsername } = React.useState('user');
-    const { pass, setPass } = React.useState('123456');
-
-    const validaUsuario = () => {
-        if (username === user.usename && pass === user.pass) {
-            navigation.navigate('telaIMC', { name: 'telaIMC' });
-        }
+    const calcImc = () => {
+        const numberPeso = Number(peso);
+        const numberAltura = Number(altura);
+        setImc((numberPeso / numberAltura ** 2).toFixed(2))
     }
 
     return (
-        <View style={styles.container} >
-            <Text>Formulário de Cadastro</Text>
-            <View style={style.form}>
-                {/*USERNAME*/}
+
+        <View style={StyleSheet.container}>
+            <View style={StyleSheet.content}>
+                <Text>
+                    Calculadora de IMC</Text>
+
                 <MaskInput
-                    style={styles.TextInput}
-                    onChangeText={(masked, unmasked) => setUsername(masked)}
-                    value={username}
-                    placeholder='Digite seu horário'
-                />
+                    mask={[/\d/, /\d/, /\d/, '.', /\d/]}
+                    style={style.TextInput}
+                    onChangeText={(masked, unmaskd) => setPeso(masked)}
+                    value={peso}
+                    placeholder="Digite o seu peso"
+                    keyboardType="numeric"
+                    />
+                
+                <MaskInput
+                    mask={[/\d/, /\d/, /\d/, '.', /\d/]}
+                    style={style.TextInput}
+                    onChangeText={(masked, unmaskd) => setAltura(masked)}
+                    value={altura}
+                    placeholder="Digite a sua altura"
+                    keyboardType="numeric"
+                    />
+
+                <TouchableOpacity style={StyleSheet.button} onPress={calcImc}>
+
+                    <Text>Calcular</Text>
+
+                </TouchableOpacity>
+                
+                <Text>Seu IMC é: {imc}</Text>
             </View>
         </View>
-     )  
+    )
 }
+
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor: '#ffff',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    content: {
+        gap:10,
+        flex:1,
+        alignItems: 'center'
+    },
+    textInput: {
+        padding: 5,
+        height: 40,
+        width: 200,
+        borderColor: '#006eff',
+        borderWidth: 1,
+        borderTopWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0
+     },
+     button:{
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        borderColor: 'gray',
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 5
+     }
+})
