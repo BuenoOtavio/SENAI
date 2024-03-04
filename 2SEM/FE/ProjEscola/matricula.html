@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Matricula</title>
+</head>
+<body style=" height: 100vh; width: 100vw;">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%; height: 20%;">
+            <div class="container" style="width: 100%; height: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <a class="navbar-brand" href="#">Escola</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <lr class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </lr>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEmail">Email</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="height: 80%; width: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center;">
+        <h1>Faça sua matrícula:</h1>
+        <div style="height: 60%; width: 30%; padding: 10px; border: 2px solid rgb(163, 163, 163); border-radius: 15px;">
+            <form style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; text-align: center;">
+                <div class="input-group" style="width: 90%;">
+                    <span class="input-group-text" style="width: 35%;">Nome e Sobrenome</span>
+                    <input type="text" aria-label="First name" class="form-control">
+                    <input type="text" aria-label="Last name" class="form-control">
+                  </div>
+                <div class="mb-3" style="width: 70%;">
+                    <label for="exampleTelephone" class="form-label" >Telefone</label>
+                    <input type="email" class="form-control" id="exampleTelephone" aria-describedby="telephoneHelp" style="text-align: center;">
+                  </div>
+                
+                <div class="input-group mb-3" style="width: 70%;">
+                    <label class="input-group-text" for="inputGroupSelect01">Cursos</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected>Selecione um curso...</option>
+                      <option value="info">Informática</option>
+                      <option value="enf">Enfermagem</option>
+                      <option value="eld">Eletrônica</option>
+                      <option value="mec">Mecatrônica</option>
+                      <option value="quim">Química</option>
+                    </select>
+                  </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+        </div>
+    </main>
+
+    <!-- Modal de Contato -->
+    <div class="modal fade" id="modalEmail" tabindex="-1" aria-labelledby="modalEmailLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content"
+                style="display: flex;  align-items: center; flex-direction: column; text-align: center;">
+                <div class="modal-header"
+                    style="display: flex; flex-direction: row; justify-content: space-around; width: 80%;">
+                    <h5 class="modal-title" id="modalContatoLabel">Envie um email: </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="conteudoContato">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Digite seu Nome:</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Digite seu Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Seu email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Digite seu Mensagem:</label>
+                                <textarea class="form-control" id="mensagem" style="text-align: center;" rows="3"
+                                    placeholder="Sua mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
