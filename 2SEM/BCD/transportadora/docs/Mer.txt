@@ -1,0 +1,13 @@
+--MER: Transportadora
+
+-Cliente(idCliente [chave primária], nome, endereco, telefone, email);
+
+-Funcionário(idFuncionário [chave primária], nome, cargo, salario);
+
+-Veiculo(idVeiculo [chave primária], placa, modelo, capacidade);
+
+-Rota(idRota [chave primária], Origem, Destino, Distancia);
+
+-Entrega(ID_Entrega (chave primária), inicio, fim, Status (Em andamento, Concluída, Atrasada));
+
+-Pedido( ID_Pedido (chave primária), Data_Pedido, idCliente[chave estrangeira referencia Cliente(idCliente)], idEntrega[chave estrangeira referencia Entrega(idEntrega)], Valor, Status (Em andamento, Concluído));

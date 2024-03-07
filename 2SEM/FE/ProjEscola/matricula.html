@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <lr class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="home.html">Home</a>
                         </lr>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEmail">Email</a>
@@ -37,23 +37,30 @@
             <form style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; text-align: center;">
                 <div class="input-group" style="width: 90%;">
                     <span class="input-group-text" style="width: 35%;">Nome e Sobrenome</span>
-                    <input type="text" aria-label="First name" class="form-control">
-                    <input type="text" aria-label="Last name" class="form-control">
+                    <input type="text" aria-label="First name" class="form-control" required>
+                    <input type="text" aria-label="Last name" class="form-control" required>
                   </div>
-                <div class="mb-3" style="width: 70%;">
-                    <label for="exampleTelephone" class="form-label" >Telefone</label>
-                    <input type="email" class="form-control" id="exampleTelephone" aria-describedby="telephoneHelp" style="text-align: center;">
+                  <div class="input-group mb-3" style="width: 90%;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                   </div>
-                
+                  <div class="input-group mb-3" style="width: 90%;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nascimento(dd/mm/aa)</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                  </div>
+                  <div class="input-group mb-3" style="width: 90%;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Endereço</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                  </div>
                 <div class="input-group mb-3" style="width: 70%;">
                     <label class="input-group-text" for="inputGroupSelect01">Cursos</label>
-                    <select class="form-select" id="inputGroupSelect01">
+                    <select class="form-select" id="inputGroupSelect01" required>
                       <option selected>Selecione um curso...</option>
-                      <option value="info">Informática</option>
-                      <option value="enf">Enfermagem</option>
-                      <option value="eld">Eletrônica</option>
-                      <option value="mec">Mecatrônica</option>
-                      <option value="quim">Química</option>
+                      <option value="info">Composição</option>
+                      <option value="enf">Produção</option>
+                      <option value="eld">Instrumentação</option>
+                      <option value="mec">Vocal</option>
+                      <option value="quim">História da música</option>
                     </select>
                   </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
