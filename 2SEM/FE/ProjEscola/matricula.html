@@ -7,12 +7,12 @@
      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Matricula</title>
 </head>
-<body style=" height: 100vh; width: 100vw;">
+<body style=" height: 100vh; width: 100vw; background-color: #FAEDDA;">
 
-    <header style="background-color: blueviolet;">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%; height: 20%; ">
+    <header >
+        <nav class="navbar navbar-expand-lg navbar-dark background-color" style="font-weight: bold; background-color: #26B6C6; height: 10vh;">
             <div class="container" style="width: 100%; height: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-                <a class="navbar-brand" href="#">Music Academy</a>
+                <a class="navbar-brand" href="home.html" style="color: #3C2F80;">Music Academy</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <lr class="nav-item">
-                            <a class="nav-link" href="home.html">Home</a>
+                            <a class="nav-link" href="Cursos.html" style="color: #3C2F80;">Home</a>
                         </lr>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEmail">Email</a>
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEmail" style="color: #3C2F80;">Email</a>
                         </li>
                     </ul>
                 </div>
@@ -32,29 +32,29 @@
     </header>
 
     <main style="height: 80%; width: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center;">
-        <h1>Faça sua matrícula:</h1>
-        <div style="height: 85%; width: 40%; padding: 10px; border: 2px solid rgb(163, 163, 163); border-radius: 15px;">
+        <h1 style="color: #3C2F80;">Faça sua matrícula:</h1>
+        <div style="height: 85%; width: 40%; padding: 10px; border: 2px solid rgb(163, 163, 163); border-radius: 15px; border: 3px solid #3C2F80;">
             <form style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; text-align: center;">
                 <div class="input-group" style="width: 90%;">
-                    <span class="input-group-text" style="width: 35%;">Nome e Sobrenome</span>
-                    <input type="text" aria-label="First name" class="form-control" required>
-                    <input type="text" aria-label="Last name" class="form-control" required>
+                    <span class="input-group-text" style="width: 35%; background-color: #FAEDDA; color: #3C2F80; border: 2px solid #3C2F80; border-right: none;">Nome e Sobrenome</span>
+                    <input type="text" aria-label="First name" class="form-control" style="border: 2px solid #3C2F80; border-right: none; text-align: center; color: #3C2F80" required>
+                    <input type="text" aria-label="Last name" class="form-control" style="border: 2px solid #3C2F80;  text-align: center; color: #3C2F80" required>
                   </div>
                   <div class="input-group mb-3" style="width: 90%;">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #FAEDDA; color: #3C2F80; border: 2px solid #3C2F80; border-right: none;">Telefone</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="border: 2px solid #3C2F80;  text-align: center; color: #3C2F80" required>
                   </div>
                   <div class="input-group mb-3" style="width: 90%;">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nascimento(dd/mm/aa)</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #FAEDDA; color: #3C2F80; border: 2px solid #3C2F80; border-right: none;">Nascimento(dd/mm/aa)</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="border: 2px solid #3C2F80;  text-align: center; color: #3C2F80" required>
                   </div>
                   <div class="input-group mb-3" style="width: 90%;">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Endereço</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #FAEDDA; color: #3C2F80; border: 2px solid #3C2F80; border-right: none;">Endereço</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" style="border: 2px solid #3C2F80;  text-align: center; color: #3C2F80" required>
                   </div>
-                <div class="input-group mb-3" style="width: 70%;">
-                    <label class="input-group-text" for="inputGroupSelect01">Cursos</label>
-                    <select class="form-select" id="inputGroupSelect01" required>
+                <div class="input-group mb-3" style="width: 70%; " >
+                    <label class="input-group-text" for="inputGroupSelect01" style="background-color: #FAEDDA; color: #3C2F80; border: 2px solid #3C2F80; border-right: none;">Cursos</label>
+                    <select class="form-select" id="inputGroupSelect01" style="border: 2px solid #3C2F80;  text-align: center; color: #3C2F80" required>
                       <option selected>Selecione um curso...</option>
                       <option value="info">Composição</option>
                       <option value="enf">Produção</option>
@@ -63,7 +63,7 @@
                       <option value="quim">História da música</option>
                     </select>
                   </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary" style="background-color: #3C2F80; border: #3C2F80; color: #FAEDDA;">Enviar</button>
               </form>
         </div>
     </main>
@@ -72,7 +72,7 @@
     <div class="modal fade" id="modalEmail" tabindex="-1" aria-labelledby="modalEmailLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content"
-                style="display: flex;  align-items: center; flex-direction: column; text-align: center;">
+                style="display: flex;  align-items: center; flex-direction: column; text-align: center; border: 3px solid #3C2F80; background-color: #26B6C6; color: #FAEDDA; font-weight: bold;">
                 <div class="modal-header"
                     style="display: flex; flex-direction: row; justify-content: space-around; width: 80%;">
                     <h5 class="modal-title" id="modalContatoLabel">Envie um email: </h5>
@@ -83,23 +83,23 @@
                         <form>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Digite seu Nome:</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome" style="border:2px solid #FAEDDA; color: #FAEDDA; background-color: #26B6C6; text-align: center;" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Digite seu Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Seu email">
+                                <input type="email" class="form-control" id="email" placeholder="Seu email" style="border:2px solid #FAEDDA; color: #FAEDDA; background-color: #26B6C6; text-align: center; "  required>
                             </div>
                             <div class="mb-3">
-                                <label for="mensagem" class="form-label">Digite seu Mensagem:</label>
-                                <textarea class="form-control" id="mensagem" style="text-align: center;" rows="3"
-                                    placeholder="Sua mensagem"></textarea>
+                                <label for="mensagem" class="form-label">Digite sua Mensagem:</label>
+                                <textarea class="form-control" id="mensagem" rows="3"
+                                    placeholder="Sua mensagem" style="border:2px solid #FAEDDA; color: #FAEDDA; background-color: #26B6C6; text-align: center;" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #FAEDDA; color: #26B6C6; border: #3C2F80;" >Enviar</button>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #3C2F80; color: #FAEDDA;">Fechar</button>
                 </div>
             </div>
         </div>
