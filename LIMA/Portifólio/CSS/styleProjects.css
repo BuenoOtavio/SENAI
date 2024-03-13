@@ -13,6 +13,7 @@ body{
     background-repeat: no-repeat;
     font-family: 'Rubik Mono One', monospace;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 header{
@@ -25,7 +26,7 @@ header{
 }
 
 main{
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -73,13 +74,9 @@ a {
   }
 
   @media only screen and (max-width: 466px){
-    body{
-        width: 466px;
-        height: 566px;
-    }
-
     header{
         width: 100%;
+        font-size: smaller;
         height: 20%;
         display: flex;
         align-items: center;
@@ -89,7 +86,9 @@ a {
     main{
         width: 100%;
         height: 80%;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .projects{
@@ -100,7 +99,7 @@ a {
     }
 
     .projs{
-        width: 40vw;
+        width: 50vw;
         height: 20vh;
         display: flex;
         align-items: center;
