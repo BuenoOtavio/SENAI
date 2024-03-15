@@ -21,4 +21,22 @@ Necessário ter instalado:
     ```cmd
     yarn web
     ```
+### Imagens do programa em funcionamento
 
+- É possível logar com os seguintes usuários:
+
+<img src="assets/Captura de Tela (4).png">
+<img src="assets/Captura de Tela (5).png">
+
+- Após logar, aparecerá a seguinte tela:
+
+<img src="assets/Captura de Tela (6).png">
+
+- Juros:
+
+<img src="assets/Captura de Tela (7).png">
+
+- Idade :
+
+<img src="assets/Captura de Tela (8).png">
+<img src="assets/Captura de Tela (10).png">
