@@ -3,7 +3,7 @@ const con = require('../connection/mysql');
 
 //CRUD - CREATE
 const addRota = (req, res) => {
-    if (req.body != null && req.body.origem != null && req.body.destino != null && req.body.distancia) {
+    if (req.body != null && req.body.origem != null && req.body.destino != null && req.body.distancia != null) {
         const { origem, destino, distancia} = req.body;
         con.query('INSERT INTO rota (origem, destino, distancia) VALUES (?, ?, ?)', [origem, destino, distancia], (err, result) => {
             if (err) {
@@ -21,7 +21,7 @@ const addRota = (req, res) => {
 //CRUD - READ
 const getRota = (req, res) => {
     if (req.params.id != null) {
-        con.query('SELECT * FROM cliente WHERE idRota =' + req.params.id, (err, result) => {
+        con.query('SELECT * FROM rota WHERE idRota =' + req.params.id, (err, result) => {
             if (err) {
                 res.status(500).send('Erro ao listar rota');
             }
@@ -39,7 +39,7 @@ const getRota = (req, res) => {
 
 //CRUD - UPDATE
 const updateRota = (req, res) => {
-    if (req.body != null && req.body.origem != null && req.body.destino != null && req.body.distancia) {
+    if (req.body != null && req.body.origem != null && req.body.destino != null && req.body.distancia != null) {
         const { idRota, origem, destino, distancia} = req.body;
         con.query('UPDATE rota SET origem = ?, destino = ?, distancia = ? WHERE idRota = ?', [origem, destino, distancia, idRota], (err, result) => {
             if (err) {
