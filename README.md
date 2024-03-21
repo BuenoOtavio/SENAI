@@ -1,2 +1,2 @@
 # SENAI
-My projects from my System Development studies
+Projects from my System Development studies in SENAI
