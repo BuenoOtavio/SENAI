@@ -1,5 +1,5 @@
 const e = require('express');
-const con = require('../connection/mysql.js');
+const con = require('../connection/mysql');
 
 //CRUD - CREATE
 const addUsuarios = (req, res) => {
