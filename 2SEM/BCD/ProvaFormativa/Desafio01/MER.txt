@@ -1,0 +1,7 @@
+--MER: Empresa
+
+-veiculos(placa [chave primária], modelo, marca, ano);
+
+-funcionário(matricula [chave primária], nome, telefone);
+
+-manutencao( idManutencao (chave primária), inicioManutencao, fimManutencao, descricao, placaVeiculo[chave estrangeira referencia Veiculos(placa)], matriculaFuncionario[chave estrangeira referencia Funcionario(matricula)]);
