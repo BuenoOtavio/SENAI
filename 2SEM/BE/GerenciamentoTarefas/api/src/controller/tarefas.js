@@ -3,14 +3,15 @@ const con = require('../connection/mysql.js');
 
 //CRUD - CREATE
 const addTarefas = (req, res) => {
-    if (req.body != null && req.body.descricao != null && req.body.dataVencimento != null && req.body.estatus != null && req.body.idUsuario != null) {
-        const {descricao, dataVencimento, estatus, idUsuario} = req.body;
-        con.query('INSERT INTO tarefas (descricao, dataVencimento, estatus, idUsuario) VALUES (?, ?, ?, ?)', [descricao, dataVencimento, estatus, idUsuario], (err, result) => {
+    if (req.body != null && req.body.descricao != null && req.body.dataVencimento != null && req.body.estatus != null && req.body.idUsuario != null && req.body.idAtribuidor != null) {
+        const {descricao, dataVencimento, estatus, idUsuario, idAtribuidor} = req.body;
+        con.query('INSERT INTO tarefas (descricao, dataVencimento, estatus, idUsuario, idAtribuidor) VALUES (?, ?, ?, ?, ?)', [descricao, dataVencimento, estatus, idUsuario, idAtribuidor], (err, result) => {
             if (err) {
                 res.status(500).json('Erro ao adicionar tarefa');
             } else {
                 req.body.id = result.insertId;
                 res.status(201).json(req.body);
+                console.log(req.body);
             }
         });
     } else {
@@ -39,9 +40,9 @@ const getTarefas = (req, res) => {
 
 //CRUD - UPDATE
 const updateTarefas = (req, res) => {
-    if (req.body != null && req.body.id != null && req.body.descricao != null && req.body.dataVencimento != null && req.body.estatus != null && req.body.idUsuario != null) {
-        const { id, descricao, dataVencimento, estatus, idUsuario} = req.body;
-        con.query('UPDATE tarefas SET descricao = ?, dataVencimento = ?, estatus = ?, idUsuario = ? WHERE id = ?', [descricao, dataVencimento, estatus, idUsuario, id], (err, result) => {
+    if (req.body != null && req.body.id != null && req.body.descricao != null && req.body.dataVencimento != null && req.body.estatus != null && req.body.idUsuario != null & req.body.idAtribuidor != null) {
+        const { id, descricao, dataVencimento, estatus, idUsuario, idAtribuidor} = req.body;
+        con.query('UPDATE tarefas SET descricao = ?, dataVencimento = ?, estatus = ?, idUsuario = ?, idAtribuidor = ? WHERE id = ?', [descricao, dataVencimento, estatus, idUsuario, idAtribuidor,id], (err, result) => {
             if (err) {
                 res.status(500).json(err);
             } else {

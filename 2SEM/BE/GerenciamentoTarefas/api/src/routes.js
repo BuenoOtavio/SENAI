@@ -18,6 +18,7 @@ routes.post('/tarefas', Tarefa.addTarefas);
 routes.get('/tarefas', Tarefa.getTarefas);
 routes.get('/tarefas/:id', Tarefa.getTarefas);
 routes.put('/tarefas', Tarefa.updateTarefas);
+routes.put('/tarefas/:id', Tarefa.updateTarefas);
 routes.delete('/tarefas/:id', Tarefa.deleteTarefas);
 
 module.exports = routes;

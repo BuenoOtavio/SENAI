@@ -15,5 +15,7 @@ CREATE TABLE tarefas (
     dataVencimento DATE NOT NULL,
     estatus VARCHAR(20) NOT NULL,
     idUsuario INT NOT NULL,
+    idAtribuidor INT NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES Usuarios(id),
     FOREIGN KEY (idUsuario) REFERENCES Usuarios(id)
 );
