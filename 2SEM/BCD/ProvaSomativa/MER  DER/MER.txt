@@ -1,0 +1,7 @@
+-- MER: AlugCarros
+
+veiculos(placa [chave primária], modelo, marca, tipo, diaria);
+
+clientes(cpf [chave primária], nome, telefone);
+
+reserva(id[chave primária], reserva, retirada, devolucao, dias, istatus, subTotal, veiculo[chave estrangeira referencia veiculos(placa)], cliente[chave estrangeira referencia clientes(cpf)]);
