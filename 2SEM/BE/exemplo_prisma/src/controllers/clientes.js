@@ -7,44 +7,44 @@ const create = async (req, res) => {
 
     console.log(data);
 
-    const pontosTuristicos = await prisma.pontoTuristico.create({
+    const cliente = await prisma.clientes.create({
         data
     });
 
-    res.status(201).json(pontosTuristicos).end();
+    res.status(201).json(cliente).end();
 }
 
 const read = async (req, res) => {
-    const pontosTuristicos = await prisma.pontoTuristico.findMany({
+    const clientes = await prisma.clientes.findMany({
         include : {
-            destinos : true,
+            telefones : true
         }
     });
 
-    res.status(200).json(pontosTuristicos).end();
+    res.status(200).json(clientes).end();
 }
 
 const readById = async (req, res) => {
-    const pontosTuristicos = await prisma.pontoTuristico.findUnique({
+    const cliente = await prisma.clientes.findUnique({
         where : {
             id : Number(req.params.id)
         },
         include : {
-            destinos: {
+            telefones: {
                 select : {
-                    nome: true
+                    telefone: true
                 }
             }
         }
     });
 
-    res.status(200).json(pontosTuristicos).end();
+    res.status(200).json(cliente).end();
 }
 
 const readByName = async (req, res) => {
     const { nome } = req.body;
 
-    const pontosTuristicos = await prisma.pontoTuristico.findMany({
+    const clientes = await prisma.clientes.findMany({
         where : {
             nome : {
                 contains : nome
@@ -52,31 +52,34 @@ const readByName = async (req, res) => {
         }
     });
 
-    res.status(200).json(pontosTuristicos).end();
+    res.status(200).json(clientes).end();
 }
 
+//localhost:3000/clientes/1
 const remove = async (req, res) => {
-    const pontosTuristicos = await prisma.pontoTuristico.delete({
+    const cliente = await prisma.clientes.delete({
         where: {
             id: Number(req.params.id)
         }
     });
 
-    res.status(200).json(pontosTuristicos).end();
+    res.status(200).json(cliente).end();
 }
 
+//param id
+//body info
 const update = async (req, res) => {
     const id = Number(req.params.id);
     const data = req.body;
 
-    const pontosTuristicos = await prisma.pontoTuristico.update({
+    const cliente = await prisma.clientes.update({
         where: {
             id
         },
         data
     });
 
-    res.status(200).json(pontosTuristicos).end();
+    res.status(200).json(cliente).end();
 }
 
 module.exports = {
