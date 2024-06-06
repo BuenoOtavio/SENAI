@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    background-color: green;
+    font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.score{
+    font-size: 15px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.game-board{
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgb(16, 111, 235), rgb(70, 145, 243))
+}
+
+.background{
+    width: 100%;
+    height: 20vh;
+    background-image: url(assets/imgs/ground.jpg);
+    background-size: cover;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: pipe-animations 1.5s infinite linear;
+}
+
+.mario{
+    width: 130px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump{
+    animation: mario-animation 500ms ease-out;
+}
+
+.cloud{
+    margin-top: 10%;
+    width: 40vw;
+    position: absolute;
+    animation: cloud 20s infinite linear;
+}
+
+.game-over{
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(65, 57, 57, 0.363)
+}
+
+.restart{
+    height: 60px;
+    width: 350px;
+    border: 4px solid rgb(221, 3, 3);
+    color: white;
+    font-size: 20px;
+    background-color: rgb(184, 0, 0);
+    cursor: pointer;
+    transition: transform .3s;
+    transform: scale(0.8);
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.restart:hover{
+    transform: scale(1);
+}
+
+.restart:hover{
+    background-color: rgb(151, 0, 0);
+    border: 4px solid rgb(187, 2, 2);
+}
+
+@keyframes pipe-animations {
+    from{
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mario-animation{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 120px
+    }
+
+    50%{
+        bottom: 120px;
+    }
+
+    60%{
+        bottom: 120px
+    }
+
+    100%{
+        bottom: 0px
+    }
+}
+
+@keyframes cloud {
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100%
+    }
+}
+
+@media (max-width: 620px){
+    .mario{
+        width: 110px;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .pipe{
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        animation: pipe-animations 1s infinite linear;
+    }
+}
