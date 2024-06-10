@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #191414;
+    color: aliceblue;
+    font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
+}
+
+.playlists{
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+}
+
+.card{
+    height: 60vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(180,1,1,1);
+    border: 10px solid rgb(110, 0, 0);
+    border-radius: 30px;
+    text-decoration: 3px solid rgb(110, 0, 0) underline;
+    transition: all 0.3s ease-out;
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;}
+
+.card:hover{
+    transform: translateY(-4vh);
+    cursor: pointer;
+}
+
+header{
+    height: 12vh;
+    width: 100vw;
+    background-color: rgba(180,1,1,1);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.opcoes{
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.image{
+    width: 3vw;
+    transition: transform .3s;
+}
+
+.image:hover{
+    transform: scale(1.2);
+}

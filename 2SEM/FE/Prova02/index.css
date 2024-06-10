@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: rgba(180,1,1,1);
+    color: rgb(185, 183, 183);
+}
+
+.container{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+button{
+    background-color: rgb(185, 183, 183);
+    color: rgba(180,1,1,1);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+button:hover{
+    background-color: rgb(121, 119, 119);
+}
