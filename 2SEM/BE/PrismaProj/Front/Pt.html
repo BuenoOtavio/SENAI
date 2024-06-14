@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pontos Turísticos</title>
+    <link rel="stylesheet" href="style.css">
+    <title>PapelTudo</title>
 </head>
-<body>
-    
+
+<body onload="loadItens()">
+    <header>
+        <h1>PapelTudo</h1>
+        <nav>
+            <button onclick="cadastro.classList.remove('oculto')">+</button>
+        </nav>
+    </header>
+    <main>
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>Id Destino</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody id="dados">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div class="sisMsgs" id="sisMsgs">
+            <h3 id="textMsgs">
+
+            </h3>
+        </div>
+        <h2>By tavinho</h2>
+    </footer>
+    <div class="modal oculto" id="cadastro">
+        <div class="janela">
+            <div class="topForm">
+                <h2>Cadastrar novo item: </h2>
+                <input type="reset" value="X" class="cancel" onclick="cadastro.classList.add('oculto')">
+            </div>
+            <form id="criar">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="endereco" placeholder="Endereço">
+                <input type="text" name="telefone" placeholder="Telefone">
+                <input type="text" name="idDestino" placeholder="id Destino">
+                <input type="submit" value="Enviar" class="submit">
+            </form>
+        </div>
+    </div>
+    <div class="modal oculto" id="msgs">
+        <div class="janela">
+            <h2 id="errTit"></h2>
+            <br>
+            <h3 id="msg"> </h3>
+            <br>
+            <div>
+                <button onclick="window.location.href='./'">Fechar</button>
+                <button id="confirma" class="oculto">Confirma</button>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="pt.js"></script>
+
 </html>

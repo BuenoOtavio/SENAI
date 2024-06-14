@@ -74,6 +74,7 @@ const remove = async (req, res) => {
 const update = async (req, res) => {
     const id = Number(req.params.id);
     const data = req.body;
+    console.log("Funcionando kk")
 
     const destinos = await prisma.destinos.update({
         where: {
