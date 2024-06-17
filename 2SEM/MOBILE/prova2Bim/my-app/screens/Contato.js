@@ -1,79 +1,61 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-export default function Indicacao() {
+export default function Contato() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Filmes que indico</Text>
-
-      <View style={styles.lista}>
-
-      <View style={styles.movie}>
-        <Image source={require('../assets/getOut.jpg')} style={styles.image} />
-        <Text style={styles.movieTitle}>1. Get Out</Text>
+      <Text style={styles.title}>Contato / Quem somos</Text>
+      <View style={styles.contactInfo}>
+        <Text style={styles.label}>Email:</Text>
+        <Text style={styles.info}>cinemanamao@gmail.com</Text>
       </View>
-
-      <View style={styles.movie}>
-        <Image source={require('../assets/Ib.jpg')} style={styles.image} />
-        <Text style={styles.movieTitle}>2. Inglorious Basterds</Text>
+      <View style={styles.contactInfo}>
+        <Text style={styles.label}>Telefone:</Text>
+        <Text style={styles.info}>(11) 1234-5678</Text>
       </View>
-
-      <View style={styles.movie}>
-        <Image source={require('../assets/starwars.jpg')} style={styles.image} />
-        <Text style={styles.movieTitle}>3. StarWars (1977)</Text>
-      </View>
-
-      </View>
-
-      <View style={styles.lista}>
-        <View style={styles.movie}>
-        <Image source={require('../assets/django.jpg')} style={styles.image} />
-        <Text style={styles.movieTitle}>4. Django Unchained</Text>
-      </View>
-      
-      <View style={styles.movie}>
-        <Image source={require('../assets/us.jpg')} style={styles.image} />
-        <Text style={styles.movieTitle}>5. Us</Text>
-      </View>
-      </View>
+      <Text style={styles.description}>
+        O aplicativo "Cinema na Mão" traz os últimos lançamentos e destaques do cinema, permite buscar
+        informações sobre filmes e oferece recomendações personalizadas para os usuários.
+      </Text>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    flexDirection: 'column'
-  },
-  lista: {
-    flex: 1,
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    padding: 20,
-    flexDirection: 'row',
-    width: '80vw'
+    backgroundColor: '#f0f0f0',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
+    color: '#333',
     marginBottom: 20,
+    textAlign: 'center',
   },
-  movie: {
-    marginBottom: 20,
+  contactInfo: {
+    flexDirection: 'row',
+    marginBottom: 10,
     alignItems: 'center',
   },
-  image: {
-    width: 100,
-    height: 150,
-    resizeMode: 'cover',
-    borderRadius: 10,
-    marginBottom: 10,
+  label: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#555',
+    marginRight: 10,
   },
-  movieTitle: {
-    fontSize: 20,
-    fontWeight: '500',
+  info: {
+    fontSize: 18,
+    color: '#555',
+  },
+  description: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#666',
+    marginTop: 20,
+    lineHeight: 26,
   },
 });

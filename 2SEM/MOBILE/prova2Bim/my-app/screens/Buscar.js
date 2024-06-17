@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, FlatList, Text, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, FlatList, StyleSheet, Image } from 'react-native';
 import axios from 'axios';
 
 export default function Buscar() {
@@ -24,14 +24,19 @@ export default function Buscar() {
         value={search}
         onChangeText={setSearch}
       />
-      <Button title="Buscar" onPress={searchMovies} />
+      <TouchableOpacity style={styles.button} onPress={searchMovies}>
+        <Text style={styles.buttonText}>Buscar</Text>
+      </TouchableOpacity>
       <FlatList
         data={movies}
         keyExtractor={(item) => item.imdbID}
         renderItem={({ item }) => (
           <View style={styles.movie}>
-            <Text>{item.Title}</Text>
-            <Text>{item.Year}</Text>
+            <Image source={{ uri: item.Poster }} style={styles.image} />
+            <View style={styles.movieDetails}>
+              <Text style={styles.movieTitle}>{item.Title}</Text>
+              <Text style={styles.movieYear}>{item.Year}</Text>
+            </View>
           </View>
         )}
       />
@@ -43,15 +48,56 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: '#f8f8f8',
   },
   input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
+    borderRadius: 5,
     marginBottom: 10,
-    padding: 10,
+    paddingHorizontal: 10,
+    backgroundColor: '#fff',
+  },
+  button: {
+    backgroundColor: '#f44336',
+    paddingVertical: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   movie: {
+    flexDirection: 'row',
+    padding: 10,
     marginBottom: 10,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
   },
-})
+  image: {
+    width: 50,
+    height: 75,
+    borderRadius: 5,
+  },
+  movieDetails: {
+    marginLeft: 10,
+    justifyContent: 'center',
+  },
+  movieTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  movieYear: {
+    fontSize: 14,
+    color: 'gray',
+  },
+});
